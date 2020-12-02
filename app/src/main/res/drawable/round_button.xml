@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="oval">
+            <stroke android:color="#6066AA" android:width="2sp"/>
+            <solid android:color="@color/fui_bgTwitter"/>
+            <size android:width="70sp" android:height="70sp" />
+        </shape>
+    </item>
+</selector>

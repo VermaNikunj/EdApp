@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="20sp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvprofile1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:gravity="start"
+            android:layout_marginStart="6sp"
+            android:layout_marginBottom="25sp"
+            android:textColor="@color/colorAccent2"
+            android:visibility="invisible"/>
+        <TextView
+            android:id="@+id/tvprofile2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginStart="6sp"
+            android:textColor="@color/colorAccent2"
+            android:gravity="start"
+            android:visibility="invisible"/>
+        <Button
+            android:id="@+id/btsignout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Out"
+            android:padding="11sp"
+            android:textSize="16sp"
+            android:layout_marginTop="60sp"
+            android:layout_gravity="center"
+            android:background="@drawable/edges_button"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@mipmap/bg">
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/btProfile"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_width="55sp"-->
+<!--        android:layout_height="55sp"-->
+<!--        android:src="@drawable/profile_foreground"-->
+<!--        android:background="@color/fui_transparent"-->
+<!--        android:visibility="visible"-->
+<!--        android:layout_margin="10sp"/>-->
+
+    <LinearLayout
+        android:id="@+id/type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp">
+
+    <Button
+        android:id="@+id/btStart"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:text="  School   "
+        android:padding="10dp"
+        android:textSize="22sp"
+        android:fontFamily="casual"
+        android:layout_marginBottom="8sp"
+        android:textStyle="italic|bold"
+        android:textColor="@color/cardview_light_background"
+        android:background="@drawable/custom_button1"
+        android:visibility="visible"
+        android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/btStartclg"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_button1"
+            android:padding="10dp"
+            android:text="  College   "
+            android:fontFamily="casual"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="22sp"
+            android:textStyle="italic|bold"
+            android:visibility="visible"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/type"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginTop="10sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_margin="5sp">
+
+            <Button
+                android:id="@+id/btProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:visibility="visible"
+                android:textColor="@color/white"
+                android:background="@drawable/custom_button"
+                android:layout_margin="5sp"/>
+
+            <Button
+                android:id="@+id/btInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Info"
+                android:visibility="visible"
+                android:textColor="@color/white"
+                android:background="@drawable/custom_button"
+                android:layout_margin="5sp"/>
+
+            <Button
+                android:id="@+id/btContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact as"
+                android:visibility="visible"
+                android:textColor="@color/white"
+                android:background="@drawable/custom_button"
+                android:layout_margin="5sp"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btUpload"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="5sp"
+            android:layout_marginTop="33sp"
+            android:layout_marginBottom="33sp"
+            android:text="Upload"
+            android:textSize="15sp"
+            android:background="@drawable/custom_button2"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</RelativeLayout>

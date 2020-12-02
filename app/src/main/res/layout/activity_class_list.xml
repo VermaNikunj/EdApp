@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClassList"
+    android:orientation="vertical"
+    android:layout_margin="7sp"
+    android:padding="5sp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Class"
+        android:textSize="25sp"
+        android:textColor="@color/fui_bgAnonymous"
+        android:background="@drawable/custom_button2"
+        android:fontFamily="cursive"
+        android:layout_weight="0.01"
+        android:layout_marginBottom="5sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingTop="5sp"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/c5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Class 5 "
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/edges_button2"
+            android:layout_marginStart="50sp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/c51"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_send_24"
+            android:background="@color/fui_bgEmail"
+            android:layout_weight="5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/c6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Class 6 "
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/edges_button"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/c61"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_send_24"
+            android:background="@color/DeepPurple"
+            android:layout_gravity="center"
+            android:layout_weight="5" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/c7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Class 7 "
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/edges_button2"
+            android:layout_marginStart="50sp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/c71"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_send_24"
+            android:background="@color/fui_bgEmail"
+            android:layout_gravity="center"
+            android:layout_weight="5" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/c8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Class 8 "
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/edges_button"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/c81"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_send_24"
+            android:background="@color/DeepPurple"
+            android:layout_gravity="center"
+            android:layout_weight="5" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/c9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Class 9 "
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/edges_button2"
+            android:layout_marginStart="50sp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/c91"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_send_24"
+            android:background="@color/fui_bgEmail"
+            android:layout_gravity="center"
+            android:layout_weight="5" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/c10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Class 10 "
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/edges_button"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/c101"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_send_24"
+            android:background="@color/DeepPurple"
+            android:layout_gravity="center"
+            android:layout_weight="5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/c11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Class 11 "
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/edges_button2"
+            android:layout_marginStart="50sp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/c111"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_menu_24"
+            android:background="@color/fui_bgEmail"
+            android:layout_gravity="center"
+            android:layout_weight="5" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/c12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Class 12 "
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/edges_button"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/c121"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_menu_24"
+            android:background="@color/DeepPurple"
+            android:layout_gravity="center"
+            android:layout_weight="5" />
+    </LinearLayout>
+
+</LinearLayout>

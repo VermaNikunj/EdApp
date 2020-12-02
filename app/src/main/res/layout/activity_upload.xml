@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="16sp"
+android:paddingLeft="16sp"
+android:paddingRight="16sp"
+android:paddingTop="16sp"
+tools:context=".UploadActivity">
+
+<Spinner
+    android:id="@+id/sp1"
+    android:layout_width="match_parent"
+    android:layout_height="40sp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="70sp"
+    android:background="@drawable/background_spinner"/>
+
+<!--<Spinner-->
+<!--    android:id="@+id/sp2"-->
+<!--    android:background="@drawable/background_spinner"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="40sp"-->
+<!--    android:layout_alignParentTop="true"-->
+<!--    android:layout_centerHorizontal="true"-->
+<!--    android:layout_marginTop="140sp"/>-->
+
+    <EditText
+        android:id="@+id/ed1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the Subject"
+        android:layout_marginTop="140sp"
+        android:visibility="invisible"/>
+
+    <EditText
+        android:id="@+id/ed2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Other Info (If Any)"
+        android:layout_marginTop="200sp"
+        android:visibility="invisible"/>
+
+    <EditText
+        android:id="@+id/ed3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Semester (Only Number)"
+        android:layout_marginTop="180sp"
+        android:visibility="invisible"
+        android:inputType="numberSigned"
+        android:ems="18"
+        android:maxLength="1" />
+
+
+    <EditText
+        android:id="@+id/ed4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Other Info (If Any)"
+        android:layout_marginTop="220sp"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270sp">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btselect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select"
+            android:visibility="invisible"/>
+        <TextView
+            android:id="@+id/tv_filename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:layout_marginEnd="8sp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="13sp"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+            <ImageButton
+                android:id="@+id/minus"
+                android:layout_marginStart="10sp"
+                android:layout_width="23sp"
+                android:layout_height="23sp"
+                android:src="@drawable/minus"
+                android:background="@color/fui_transparent" />
+
+            <ImageButton
+                android:id="@+id/plus"
+                android:layout_marginStart="5sp"
+                android:layout_width="23sp"
+                android:layout_height="23sp"
+                android:src="@drawable/plus"
+                android:background="@color/fui_transparent" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/btselect2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select"/>
+            <TextView
+                android:id="@+id/tv_filename2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+<Button
+    android:id="@+id/btupload"
+    android:layout_width="250sp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="420sp"
+    android:text="Upload"
+    android:textColor="@color/white"
+    android:background="@drawable/custom_button1"
+    android:textSize="20sp" />
+
+</RelativeLayout>
