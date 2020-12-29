@@ -43,10 +43,11 @@ public class StartActivity extends AppCompatActivity {
             }
         } );
 
-    }
-    else {
+        }
+        else
+            {
         Intent i= new Intent( StartActivity.this, MainActivity.class );
         startActivity( i );
-    }
+        }
     }
 }

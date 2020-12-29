@@ -75,7 +75,6 @@ public class Contact extends AppCompatActivity {
                         if(!comment.getText().toString().trim().isEmpty())
                         {
                            sendcomment();
-
                         }
                         else Toast.makeText( Contact.this, "Please enter the comment", Toast.LENGTH_SHORT ).show();
                     }
@@ -97,7 +96,7 @@ public class Contact extends AppCompatActivity {
                         String type,cmt;
                         type=List2.get( c )+"-"+System.currentTimeMillis();
                         cmt=email.getText().toString().trim()+" : "+comment.getText().toString().trim();
-        FirebaseDatabase database3 = FirebaseDatabase.getInstance();
+                        FirebaseDatabase database3 = FirebaseDatabase.getInstance();
                         DatabaseReference myRef3 = database3.getReference(type);
 
                         myRef3.setValue(cmt).addOnSuccessListener( new OnSuccessListener<Void>() {

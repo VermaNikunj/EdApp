@@ -90,7 +90,7 @@
                 android:id="@+id/btInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Info"
+                android:text="History"
                 android:visibility="visible"
                 android:textColor="@color/white"
                 android:background="@drawable/custom_button"

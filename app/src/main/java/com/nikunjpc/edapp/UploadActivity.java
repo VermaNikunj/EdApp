@@ -53,8 +53,6 @@ public class UploadActivity extends AppCompatActivity {
 
     ArrayList<String> List;
     ArrayAdapter<String> ad1;
-//    ArrayList<String> ListSc1,ListSc2,ListClgBt, ListClgBC;
-//    ArrayAdapter<String> ad2;
 
 
     String filename="NoName";
@@ -78,7 +76,6 @@ public class UploadActivity extends AppCompatActivity {
 
         storage = FirebaseStorage.getInstance().getReference();
 
-//        database = FirebaseDatabase.getInstance().getReference("Uploads");
         databasereference = FirebaseDatabase.getInstance();
 
         sp1 = (Spinner) findViewById( R.id.sp1 );
@@ -264,37 +261,9 @@ public class UploadActivity extends AppCompatActivity {
 
                         Task<Uri> task = taskSnapshot.getStorage().getDownloadUrl();
 
-//                        UploadPDF uploadPDF=new UploadPDF(filename, url);
                         while (!task.isComplete()) ;
                         Uri uri = task.getResult();
                         uploadData( String.valueOf( uri ) );
-
-//
-//                        Toast.makeText( UploadActivity.this, "0000000", Toast.LENGTH_SHORT ).show();
-//
-//                        FirebaseDatabase database1 = FirebaseDatabase.getInstance();
-//                        DatabaseReference myRef = database1.getReference("newmessage");
-//
-//                        Toast.makeText( UploadActivity.this, "1111111", Toast.LENGTH_SHORT ).show();
-//                        myRef.setValue("Hello New World 0710pm");
-//                        Toast.makeText( UploadActivity.this, "22222222", Toast.LENGTH_SHORT ).show();
-//
-//                        Toast.makeText( UploadActivity.this, "3333333", Toast.LENGTH_SHORT ).show();
-//
-//                        FirebaseDatabase database3 = FirebaseDatabase.getInstance();
-//                        DatabaseReference myRef3 = database3.getReference("newnewmessage");
-//
-//                        Toast.makeText( UploadActivity.this, "4444444", Toast.LENGTH_SHORT ).show();
-//                        myRef3.setValue("Hello New New World 0710pm").addOnSuccessListener( new OnSuccessListener<Void>() {
-//                            @Override
-//                            public void onSuccess(Void aVoid) {
-//                                Toast.makeText( UploadActivity.this, "Sucessfully added ", Toast.LENGTH_SHORT ).show();
-//                            }
-//                        } );
-//                        Toast.makeText( UploadActivity.this, "5555555555", Toast.LENGTH_SHORT ).show();
-
-//                        Log.d("a", "error");
-//                        Log.e( "kuch", "gadbad" );
 
                     }
                 } )
@@ -420,153 +389,3 @@ public class UploadActivity extends AppCompatActivity {
         }
     }
 }
-        //
-//        sp2.setVisibility( View.INVISIBLE );
-//        sp3.setVisibility( View.INVISIBLE );
-//
-//        final List<String> ListSc = new ArrayList<String>();
-//        ListSc.add("Select the Class");
-//        ListSc.add("Class 5");
-//        ListSc.add("Class 6");
-//        ListSc.add("Class 7");
-//        ListSc.add("Class 8");
-//        ListSc.add("Class 9");
-//        ListSc.add("Class 10");
-//        ListSc.add("Class 11");
-//        ListSc.add("Class 12");
-//
-//        ListSc1 = new ArrayList<String>();
-//        ListSc1.add("Select the Option");
-//        ListSc1.add("Science");
-//        ListSc1.add("Commerce");
-//        ListSc1.add("Arts");
-
-//
-//        final List<String> ListClg = new ArrayList<String>();
-//        ListClg.add("Select the Course");
-//        ListClg.add("B.Tech CSE");
-//        ListClg.add("B.Tech IT");
-//        ListClg.add("B.Tech ECE");
-//        ListClg.add("B.Tech MAE");
-////        ListClg.add("BCA");
-//
-//        ListClgBt = new ArrayList<String>();
-//        ListClgBt.add("Select the Option");
-//        ListClgBt.add("Semester 1");
-//        ListClgBt.add("Semester 2");
-//        ListClgBt.add("Semester 3");
-//        ListClgBt.add("Semester 4");
-//        ListClgBt.add("Semester 5");
-//        ListClgBt.add("Semester 6");
-//        ListClgBt.add("Semester 7");
-//        ListClgBt.add("Semester 8");
-//
-//        ListClgBC = new ArrayList<String>();
-//        ListClgBC.add("Select the Option");
-//        ListClgBC.add("Semester 1");
-//        ListClgBC.add("Semester 2");
-//        ListClgBC.add("Semester 3");
-//        ListClgBC.add("Semester 4");
-//        ListClgBC.add("Semester 5");
-//        ListClgBC.add("Semester 6");
-//
-//        ListSc2 = new ArrayList<String>();
-//        ListSc2.add("Select the Option");
-//        ListSc2.add("English Language");
-//        ListSc2.add("Hindi Language");
-//
-//        sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-//
-//                if(i>0 && i<7)
-//                {
-//                    ad2 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, ListSc2 );
-//                }
-//                if(i==7 || i==8) {
-//                    ad2 = new ArrayAdapter<String>( getApplicationContext(), android.R.layout.simple_spinner_item, ListSc1 );
-//                }
-//                if(i>8 && i<14){
-//                    ad2 = new ArrayAdapter<String>( getApplicationContext(), android.R.layout.simple_spinner_item, ListClgBt );
-//                }
-//                if(i==14)
-//                {
-//                    ad2 = new ArrayAdapter<String>( getApplicationContext(), android.R.layout.simple_spinner_item, ListClgBC );
-//                }
-//                sp2.setAdapter( ad2 );
-//            }
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//            }
-//        });
-//
-//        if(n==1){
-//            final ArrayAdapter<String> ad2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,ListSc);
-//            ad2.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-//            sp2.setAdapter(ad2);
-//
-//            sp2.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
-//                @Override
-//                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                    if(position==7 || position==8)
-//                    {
-//                        n=4;
-//                    }
-//                }
-//
-//                @Override
-//                public void onNothingSelected(AdapterView<?> parent) {
-//
-//                }
-//            } );
-//        }
-//        if(n==2)
-//        {
-//            ArrayAdapter<String> ad2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,ListClg);
-//            ad2.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-//            sp2.setAdapter(ad2);
-//
-//            sp2.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
-//                @Override
-//                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                    if(position>0 && position<5)
-//                    {
-//                        n=5;
-//                    }
-//                    else if(position==5){
-//                        n=6;
-//                    }
-//                }
-//
-//                @Override
-//                public void onNothingSelected(AdapterView<?> parent) {
-//
-//                }
-//            } );
-//        }
-//
-//
-//        if(n==4)
-//        {
-//            ArrayAdapter<String> ad3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,ListSc1);
-//            ad3.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-//            sp3.setAdapter(ad3);
-//        }
-//
-//        if(n==5)
-//        {
-//            ArrayAdapter<String> ad3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,ListClgBt);
-//            ad3.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-//            sp3.setAdapter(ad3);
-//        }
-//
-//        if(n==6)
-//        {
-//            ArrayAdapter<String> ad3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,ListClgBC);
-//            ad3.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-//            sp3.setAdapter(ad3);
-//        }
-//    }
-//}
