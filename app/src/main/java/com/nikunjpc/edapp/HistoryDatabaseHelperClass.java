@@ -12,15 +12,16 @@ import java.util.List;
 
 public class HistoryDatabaseHelperClass extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
 
     public static final String DATABASE_NAME = "tracking_database";
 
-    private static final String TABLE_NAME = "TRACKING";
+    private static final String TABLE_NAME = "HISTORY_TABLE";
 
     public static final String ID = "id";
-    public static final String FILE_NAME = "file_name";
     public static final String CLASS_TYPE = "class_type";
+    public static final String FILE_NAME = "file_name";
+    public static  final String URL ="url";
 
     private SQLiteDatabase sqLiteDatabase;
 
@@ -33,8 +34,9 @@ public class HistoryDatabaseHelperClass extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + ID +
-                " INTEGER PRIMARY KEY AUTOINCREMENT," + FILE_NAME + " TEXT NOT NULL," +
-                CLASS_TYPE + " TEXT NOT NULL)";
+                " INTEGER PRIMARY KEY AUTOINCREMENT, " + CLASS_TYPE + " TEXT NOT NULL," +
+                FILE_NAME + " TEXT NOT NULL,"+ URL+" TEXT NOT NULL ) ";
+
         db.execSQL( CREATE_TABLE );
     }
 
@@ -47,8 +49,9 @@ public class HistoryDatabaseHelperClass extends SQLiteOpenHelper {
 
     public void addItem(HistoryModelClass modelClass) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put( HistoryDatabaseHelperClass.FILE_NAME, modelClass.getFile_name() );
         contentValues.put( HistoryDatabaseHelperClass.CLASS_TYPE, modelClass.getClass_type() );
+        contentValues.put( HistoryDatabaseHelperClass.FILE_NAME, modelClass.getFile_name() );
+        contentValues.put( HistoryDatabaseHelperClass.URL, modelClass.getUrl() );
 
         SQLiteDatabase db = getWritableDatabase();
         db.insert( TABLE_NAME, null, contentValues );
@@ -62,9 +65,10 @@ public class HistoryDatabaseHelperClass extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 int id = Integer.parseInt( cursor.getString( 0 ) );
-                String file_name = cursor.getString( 1 );
-                String class_type = cursor.getString( 2 );
-                store.add( new HistoryModelClass( id, file_name, class_type ) );
+                String class_type = cursor.getString( 1 );
+                String file_name = cursor.getString( 2 );
+                String url = cursor.getString( 3 );
+                store.add( new HistoryModelClass( id, class_type, file_name, url ) );
             } while (cursor.moveToNext());
 
         }

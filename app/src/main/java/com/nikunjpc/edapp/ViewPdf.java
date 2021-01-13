@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -16,16 +17,32 @@ public class ViewPdf extends AppCompatActivity {
 
     WebView pdfview;
 
+    String fname, furl,fcl;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_view_pdf );
 
-        pdfview= (WebView) findViewById( R.id.viewpdf );
+//                    Toast.makeText( MainActivity.this, "Added", Toast.LENGTH_SHORT ).show();
+
+//                finish();
+//                startActivity( getIntent() );
+
+        pdfview = (WebView) findViewById( R.id.viewpdf );
         pdfview.getSettings().setJavaScriptEnabled( true );
 
-        String fname=getIntent().getStringExtra( "filename" );
-        String furl= getIntent().getStringExtra( "url" );
+        fname = getIntent().getStringExtra( "filename" );
+        furl = getIntent().getStringExtra( "url" );
+        fcl = getIntent().getStringExtra( "classtype" );
+
+            Log.e("Url CHECK", furl);
+            HistoryDatabaseHelperClass databaseHelperClass = new HistoryDatabaseHelperClass( ViewPdf.this );
+            HistoryModelClass historymodelClass = new HistoryModelClass( fcl, fname, furl );
+            Log.e("Url CHECK 2", furl);
+            databaseHelperClass.addItem( historymodelClass );
+
 
 //        ViewFilesClass5 obj= new ViewFilesClass5();
 //        String furl= obj.furl;

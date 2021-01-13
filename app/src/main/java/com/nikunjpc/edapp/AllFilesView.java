@@ -13,6 +13,7 @@ public class AllFilesView extends AppCompatActivity {
 
     RecyclerView recyclerView;
     Myadapter adapter;
+    String cl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class AllFilesView extends AppCompatActivity {
 //        ClassList schobj= new ClassList();
 //        String cl=schobj.classtype;
 
-        String cl=getIntent().getStringExtra( "classtype" );
+        cl=getIntent().getStringExtra( "classtype" );
 //        Toast.makeText( this, cl, Toast.LENGTH_LONG ).show();
 
         FirebaseRecyclerOptions<UploadPDF> options= new FirebaseRecyclerOptions.Builder<UploadPDF>()

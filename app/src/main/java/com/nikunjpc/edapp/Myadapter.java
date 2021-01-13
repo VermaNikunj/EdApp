@@ -26,7 +26,7 @@ public class Myadapter extends FirebaseRecyclerAdapter<UploadPDF,Myadapter.ViewH
         if(str.charAt(no-5)=='S')
         {
             filename=str;
-            type=cl+" Semester"+str.charAt( no-1 );
+            type=cl+" Semester "+str.charAt( no-1 );
         }
         else {
             filename=str.substring( 0,(no-6) );
@@ -39,9 +39,11 @@ public class Myadapter extends FirebaseRecyclerAdapter<UploadPDF,Myadapter.ViewH
         viewHolder.tvname.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent( viewHolder.tvname.getContext(), ViewPdf.class );
                 intent.putExtra( "filename",filename );
                 intent.putExtra( "url",uploadPDF.getUrl() );
+                intent.putExtra( "classtype", cl );
 
                 intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
                 viewHolder.tvname.getContext().startActivity( intent );

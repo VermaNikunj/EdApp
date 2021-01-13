@@ -23,6 +23,7 @@ public class HistoryAdapterClass extends RecyclerView.Adapter<HistoryAdapterClas
     Context context;
     HistoryDatabaseHelperClass databaseHelperClass;
 
+
     public HistoryAdapterClass(List<HistoryModelClass> item, Context context) {
         this.item = item;
         this.context = context;
@@ -40,32 +41,33 @@ public class HistoryAdapterClass extends RecyclerView.Adapter<HistoryAdapterClas
 
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
-        final UploadPDF uploadPDF = new UploadPDF(  );
 
         final HistoryModelClass modelClass= item.get( position );
 
         holder.id.setText(Integer.toString(position+1));
-        holder.file_name.setText( modelClass.getFile_name() );
+//        String name=modelClass.getFile_name() + " -- "+ modelClass.getClass_type();
+        holder.file_name.setText( modelClass.getFile_name());
         holder.class_type.setText( modelClass.getClass_type() );
+
 
         holder.file_name.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                itemclicked(holder, modelClass.getFile_name(),uploadPDF.getUrl());
+                itemclicked(holder, modelClass.getFile_name(), modelClass.getUrl());
                 }
         } );
 
         holder.class_type.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                itemclicked(holder, modelClass.getFile_name(),uploadPDF.getUrl());
+                itemclicked(holder, modelClass.getFile_name(),modelClass.getUrl());
             }
             } );
 
         holder.id.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                itemclicked(holder, modelClass.getFile_name(),uploadPDF.getUrl());
+                itemclicked(holder, modelClass.getFile_name(),modelClass.getUrl());
             }
         } );
 

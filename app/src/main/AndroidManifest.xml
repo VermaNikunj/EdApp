@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InfoActivity" android:label="History"/>
+        <activity android:name=".HistoryActivity" android:label="History"/>
         <activity
             android:name=".ProfileActivity"
             android:label="Profile"
@@ -42,7 +42,7 @@
         <activity
             android:name=".AllFilesView"
             android:label="List of Files" />
-        <activity android:name=".ViewPdf" />
+        <activity android:name=".ViewPdf" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".UploadActivity"
             android:label="Upload " />

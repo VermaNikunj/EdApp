@@ -203,6 +203,9 @@ public class UploadActivity extends AppCompatActivity {
 
                if(c==10) {
                    if (pdfUri != null) {
+
+                       Log.e( "Error", "Uri: "+pdfUri );
+
                        uploadFile( pdfUri );
                    }
                    else Toast.makeText( UploadActivity.this, "Select the file", Toast.LENGTH_SHORT ).show();
@@ -223,7 +226,7 @@ public class UploadActivity extends AppCompatActivity {
 //        final String info;
         if(position>0 && position<9)
         {
-            filename=ed1.getText().toString().trim() + " -Cl. "+ (position+4);
+            filename=ed1.getText().toString().trim() + " - Cl. "+ (position+4);
 //                    +" "+ List.get( position)+" : "+ed4;
 //            info=ed2.getText().toString();
 //
@@ -232,7 +235,7 @@ public class UploadActivity extends AppCompatActivity {
 
         }
         else if(position>8 && position<14){
-            filename = ed1.getText().toString().trim()+" -Sem "+ed3.getText().toString().trim();
+            filename = ed1.getText().toString().trim()+" - Sem "+ed3.getText().toString().trim();
 //                    + " "+List.get(position)+"(Sem " + ed3 + ")"+" : "+ed4;
 //            info=ed4.getText().toString();
             if(!(ed4.getText().toString().trim().isEmpty()))
@@ -240,25 +243,28 @@ public class UploadActivity extends AppCompatActivity {
 
         }
         else if(position==14){
-            filename = ed1.getText().toString().trim()+" -Sem "+ed3.getText().toString().trim();
+            filename = ed1.getText().toString().trim()+" - Sem "+ed3.getText().toString().trim();
 
             if(!(ed4.getText().toString().trim().isEmpty()))
                 info=ed4.getText().toString().trim();
         }
         else if(position==15)
         {
-            filename = ed1.getText().toString().trim() + "-Other";
+            filename = ed1.getText().toString().trim() + "- Other";
 
             if(!(ed2.getText().toString().trim().isEmpty()))
                 info=ed2.getText().toString().trim();
         }
 
         StorageReference storageReference=storage.child( "Uploads/"+List.get( position )+"/"+filename);
+
+        Log.e( "Error", "Error message 0" );
         storageReference.putFile( pdfUri )
                 .addOnSuccessListener( new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
+                        Log.e( "Error", "Error message 2" );
                         Task<Uri> task = taskSnapshot.getStorage().getDownloadUrl();
 
                         while (!task.isComplete()) ;
@@ -270,6 +276,7 @@ public class UploadActivity extends AppCompatActivity {
                 .addOnFailureListener( new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                Log.e( "Error", "Error message 1" );
                 Toast.makeText( UploadActivity.this, "Something went wrong try again!!!", Toast.LENGTH_SHORT ).show();
                 progressDialog.dismiss();
             }
@@ -295,6 +302,8 @@ public class UploadActivity extends AppCompatActivity {
 //
 //        String classType=List.get( position )+"-"+System.currentTimeMillis();
         UploadPDF helperclass= new UploadPDF( List.get(position), filename, downloadUrl, info  );
+
+        Log.e( "Error", "Error message 3" );
 
 //        Toast.makeText( UploadActivity.this, "File Stored:"+helperclass.getClasstype(), Toast.LENGTH_LONG ).show();
 
@@ -330,16 +339,21 @@ public class UploadActivity extends AppCompatActivity {
 //        Toast.makeText( UploadActivity.this, "222222222", Toast.LENGTH_LONG ).show();
 
         database = databasereference.getReference("Uploads/"+List.get( position )+"/"+System.currentTimeMillis());
+        Log.e( "Error", "Error message 4" );
 
         database.child( String.valueOf( System.currentTimeMillis() ) );
+        Log.e( "Error", "Error message 5" );
+
         database.setValue( helperclass )
                  .addOnCompleteListener( new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
 
+                                Log.e( "Error", "Error message 6" );
+
 //                                Toast.makeText( UploadActivity.this, "database", Toast.LENGTH_SHORT ).show();
                                 if (task.isSuccessful()) {
-                                    Toast.makeText( UploadActivity.this, "File Successfuly Uploaded", Toast.LENGTH_SHORT ).show();
+                                    Toast.makeText( UploadActivity.this, "File Successfully Uploaded", Toast.LENGTH_SHORT ).show();
                                     progressDialog.dismiss();
 
                                     ed1.setVisibility( View.INVISIBLE );
@@ -373,7 +387,7 @@ public class UploadActivity extends AppCompatActivity {
         Intent i=new Intent();
         i.setType( "application/pdf" );
         i.setAction( Intent.ACTION_GET_CONTENT );
-        startActivityForResult( i, 37 );
+        startActivityForResult( i, 40 );
 
     }
 
@@ -381,7 +395,7 @@ public class UploadActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult( requestCode, resultCode, data );
-        if (requestCode == 37 && resultCode == RESULT_OK && data != null) {
+        if (requestCode == 40 && resultCode == RESULT_OK && data != null) {
             pdfUri = data.getData();
             tv_filename.setText( data.getData().getLastPathSegment() );
         } else {
