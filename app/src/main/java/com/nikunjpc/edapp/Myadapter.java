@@ -29,7 +29,7 @@ public class Myadapter extends FirebaseRecyclerAdapter<UploadPDF,Myadapter.ViewH
             type=cl+" Semester "+str.charAt( no-1 );
         }
         else {
-            filename=str.substring( 0,(no-6) );
+            filename=str.substring( 0,(no-8) );
             type=cl;
         }
         viewHolder.tvname.setText(filename );

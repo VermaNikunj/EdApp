@@ -204,7 +204,7 @@ public class UploadActivity extends AppCompatActivity {
                if(c==10) {
                    if (pdfUri != null) {
 
-                       Log.e( "Error", "Uri: "+pdfUri );
+//                       Log.e( "Error", "Uri: "+pdfUri );
 
                        uploadFile( pdfUri );
                    }
@@ -224,9 +224,19 @@ public class UploadActivity extends AppCompatActivity {
         progressDialog.show();
 
 //        final String info;
-        if(position>0 && position<9)
+        if(position>0 && position<6)
         {
             filename=ed1.getText().toString().trim() + " - Cl. "+ (position+4);
+//                    +" "+ List.get( position)+" : "+ed4;
+//            info=ed2.getText().toString();
+//
+            if(!(ed2.getText().toString().trim().isEmpty()))
+                info=ed2.getText().toString().trim();
+
+        }
+        if(position>5 && position<9)
+        {
+            filename=ed1.getText().toString().trim() + " - Cl "+ (position+4);
 //                    +" "+ List.get( position)+" : "+ed4;
 //            info=ed2.getText().toString();
 //
@@ -250,7 +260,7 @@ public class UploadActivity extends AppCompatActivity {
         }
         else if(position==15)
         {
-            filename = ed1.getText().toString().trim() + "- Other";
+            filename = ed1.getText().toString().trim() + " - Other";
 
             if(!(ed2.getText().toString().trim().isEmpty()))
                 info=ed2.getText().toString().trim();
@@ -258,13 +268,13 @@ public class UploadActivity extends AppCompatActivity {
 
         StorageReference storageReference=storage.child( "Uploads/"+List.get( position )+"/"+filename);
 
-        Log.e( "Error", "Error message 0" );
+//        Log.e( "Error", "Error message 0" );
         storageReference.putFile( pdfUri )
                 .addOnSuccessListener( new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                        Log.e( "Error", "Error message 2" );
+//                        Log.e( "Error", "Error message 2" );
                         Task<Uri> task = taskSnapshot.getStorage().getDownloadUrl();
 
                         while (!task.isComplete()) ;
@@ -276,7 +286,7 @@ public class UploadActivity extends AppCompatActivity {
                 .addOnFailureListener( new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Log.e( "Error", "Error message 1" );
+//                Log.e( "Error", "Error message 1" );
                 Toast.makeText( UploadActivity.this, "Something went wrong try again!!!", Toast.LENGTH_SHORT ).show();
                 progressDialog.dismiss();
             }
@@ -303,7 +313,7 @@ public class UploadActivity extends AppCompatActivity {
 //        String classType=List.get( position )+"-"+System.currentTimeMillis();
         UploadPDF helperclass= new UploadPDF( List.get(position), filename, downloadUrl, info  );
 
-        Log.e( "Error", "Error message 3" );
+//        Log.e( "Error", "Error message 3" );
 
 //        Toast.makeText( UploadActivity.this, "File Stored:"+helperclass.getClasstype(), Toast.LENGTH_LONG ).show();
 
@@ -339,17 +349,17 @@ public class UploadActivity extends AppCompatActivity {
 //        Toast.makeText( UploadActivity.this, "222222222", Toast.LENGTH_LONG ).show();
 
         database = databasereference.getReference("Uploads/"+List.get( position )+"/"+System.currentTimeMillis());
-        Log.e( "Error", "Error message 4" );
+//        Log.e( "Error", "Error message 4" );
 
         database.child( String.valueOf( System.currentTimeMillis() ) );
-        Log.e( "Error", "Error message 5" );
+//        Log.e( "Error", "Error message 5" );
 
         database.setValue( helperclass )
                  .addOnCompleteListener( new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
 
-                                Log.e( "Error", "Error message 6" );
+//                                Log.e( "Error", "Error message 6" );
 
 //                                Toast.makeText( UploadActivity.this, "database", Toast.LENGTH_SHORT ).show();
                                 if (task.isSuccessful()) {

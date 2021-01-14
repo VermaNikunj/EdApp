@@ -13,10 +13,10 @@ public class HistoryModelClass {
         this.class_type = class_type;
         this.file_name = file_name;
         this.url=url;
-        Log.e("Url CHECK 3", url);
-        Log.e("Url CHECK 4", this.url);
-
-        Log.e("Url CHECK 5", getUrl());
+//        Log.e("Url CHECK 3", url);
+//        Log.e("Url CHECK 4", this.url);
+//
+//        Log.e("Url CHECK 5", getUrl());
 
     }
 

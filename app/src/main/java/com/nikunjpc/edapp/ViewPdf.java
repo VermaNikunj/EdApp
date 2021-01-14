@@ -37,10 +37,10 @@ public class ViewPdf extends AppCompatActivity {
         furl = getIntent().getStringExtra( "url" );
         fcl = getIntent().getStringExtra( "classtype" );
 
-            Log.e("Url CHECK", furl);
+//            Log.e("Url CHECK", furl);
             HistoryDatabaseHelperClass databaseHelperClass = new HistoryDatabaseHelperClass( ViewPdf.this );
             HistoryModelClass historymodelClass = new HistoryModelClass( fcl, fname, furl );
-            Log.e("Url CHECK 2", furl);
+//            Log.e("Url CHECK 2", furl);
             databaseHelperClass.addItem( historymodelClass );
 
 

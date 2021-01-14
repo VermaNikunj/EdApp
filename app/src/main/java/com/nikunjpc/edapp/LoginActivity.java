@@ -18,7 +18,7 @@ import java.util.List;
 public class LoginActivity extends AppCompatActivity {
 
 
-    private static final int MY_REQUEST_CODE = 711;
+    private static final int MY_REQUEST_CODE = 7117;
     List<AuthUI.IdpConfig> providers;
 
     @Override

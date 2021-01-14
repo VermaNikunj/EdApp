@@ -75,7 +75,7 @@ public class HistoryAdapterClass extends RecyclerView.Adapter<HistoryAdapterClas
             @Override
             public void onClick(View v) {
                 databaseHelperClass.deleteItem( (modelClass.getId()) );
-                Toast.makeText( context, "S. No. "+ (position+1)+" : Deleted Successfully", Toast.LENGTH_SHORT ).show();
+                Toast.makeText( context, modelClass.getFile_name()+" : Deleted Successfully", Toast.LENGTH_SHORT ).show();
                 item.remove(position);
                 notifyDataSetChanged();
             }
